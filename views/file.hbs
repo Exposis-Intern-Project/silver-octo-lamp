@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{!-- <title>Document</title> --}}
+ <title>Email | Blaster</title>
+   <link rel="shortcut icon" href="/email-send.png" type="image/x-icon">
+  <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css" crossorigin="anonymous">
+
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./file.css">
+
+</head>
+<body>
+   <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <div class="container">
+      <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Send</span><span style="color: #fff;">Blaster</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+        <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link active" href="#!">
+              <div>
+                 <i class="fas fa-home fa-lg mb-1"></i>
+              </div>
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/about">
+              <div>
+                <i class="fa-solid fa-info"></i>
+              </div>
+               About-Us
+            </a>
+          </li>
+          
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/contact">
+              <div>
+                 <i class="fa-solid fa-message"></i>
+              </div>
+               Contact-Us
+            </a>
+          </li>
+          
+         
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!--Section: Design Block-->
+  <section>
+    <!-- Intro -->
+    <div id="intro" class="bg-image " style=" 
+     background: url('gradienta-coj7UZ7iN60-unsplash.jpg');
+          {{!-- background-color: rgb(192, 163, 163) ; --}}
+           
+        ">
+      <div class="mask" style="background-color: rgba(250, 182, 162, 0.15);"></div>
+      <nav aria-label="breadcrumb" style="margin-top: 100px; margin-left: 30px; margin-bottom: 30px">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Welcome Screen</a></li>
+              <li class="breadcrumb-item active"><a href="#">Upload-File</a></li>
+              {{!-- <li class="breadcrumb-item active" aria-current="page">Data</li> --}}
+            </ol>
+      </nav>
+      <div class="file-loading" >
+            <input id="input-20" type="file">
+      </div>
+      <div id = "mails" style="display: flex; justify-content: center;margin-top:15px">
+          <div class="form-outline m-4" >
+                <textarea class="form-control" id="textAreaExample1" rows="5" autofocus></textarea>
+                <label class="form-label" for="textAreaExample1">Valid Mails</label>
+          </div>
+          <div class="form-outline m-4">
+                <textarea class="form-control" id="textAreaExample2" rows="5"  ></textarea>
+                <label class="form-label" for="textAreaExample2">Invalid Mails</label>
+          </div>
+      </div>
+      <div class="frame">
+         <button class="custom-btn btn-14" id = "mailBody">Add Mail Body</button>
+      </div>
+    </div>
+
+    
+    <!-- Intro -->
+  </section>
+  <!--Section: Design Block-->
+</header>
+</body>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/plugins/sortable.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/fileinput.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"
+></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script>
+$.fn.fileinputBsVersion = "3.3.7"; // if not set, this will be auto-derived
+ 
+
+
+$(document).ready(function() {
+    // For Bootstrap 5.x
+    $("#input-20").fileinput({
+        browseClass: "btn btn-info",
+        mainClass: "d-grid",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+        //initialPreviewDownloadUrl:false,
+        preferIconicPreview: true,
+        downloadUrl: false,
+        removeIcon: "<i class=\"bi-trash\"></i> ",
+        //downloadUrl: none,
+        previewFileIconSettings: {
+           'xlx': '<i class="fas fa-file-excel text-success"></i>',
+        },
+        initialPreviewConfig: [
+        {
+          type: "office",
+          downloadUrl: false,
+          key: 1
+        }],
+
+        deleteUrl: "/site/file-delete",
+         previewFileExtSettings: {
+           'xlx': function(ext) {
+            return ext.match(/(xls|xlsx)$/i);
+        },
+         },
+         allowedFileExtensions:["csv"]
+    });
+});
+
+
+document.getElementById("mailBody").addEventListener("click" , ()=>{
+
+ if(localStorage.getItem("valid_emails") == undefined){
+   alert("You cannot Skip Step");
+
+ }
+ else{
+  window.location.href = "/emailFormat"
+ }
+})
+
+</script>
+
+<script src="./enterFile.js"></script>
+</html>

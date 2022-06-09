@@ -1,0 +1,191 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  body {
+    background: #fddb33;
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .container {
+    background: #fff;
+    max-width: 920px;
+    height: 480px;
+    margin: auto;
+    transform: translateY(15%);
+    box-shadow: 0px 0px 6px 0px #22222273;
+  }
+  .container .circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .container .circles:before {
+    content: "";
+    position: absolute;
+    left: -6%;
+    top: -8%;
+    width: 200px;
+    height: 200px;
+    background: #fddb33;
+    border-radius: 50%;
+  }
+  .container .circles:after {
+    content: "";
+    position: absolute;
+    right: -11%;
+    bottom: -15%;
+    width: 200px;
+    height: 200px;
+    background: #fddb33;
+    border-radius: 50%;
+  }
+  .container .details-container {
+    position: relative;
+    display: flex;
+  }
+  .container .details-container .avatar {
+    margin: 10px auto;
+    position: relative;
+    float: left;
+    padding: 20px;
+  }
+  .container .details-container .avatar img {
+    max-width: 240px;
+    margin-top: -70px;
+    border: 10px solid #fff;
+    box-shadow: 0px 0px 6px 0px #22222273;
+  }
+  .container .details-container .about {
+    float: right;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  .container .details-container .about .name p {
+    margin: 0;
+    color: #222;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .container .details-container .about .name h1 {
+    color: #fddb33;
+    font-weight: bold;
+    margin: 0;
+    font-size: 3em;
+  }
+  .container .details-container .about .about-content p {
+    line-height: 1.6em;
+  }
+  .container .details-container .about .about-content button {
+    border: none;
+    color: #222;
+    padding: 10px;
+    background: #fddb33;
+    cursor: pointer;
+    font-weight: bold;
+    width: 250px;
+    height: 40px;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 1px 1px 10px 0px #2222222b;
+    transition: 0.2s all;
+  }
+  .container .details-container .about .about-content button:hover {
+    box-shadow: 1px 1px 1px 0px #2222222b;
+  }
+  .container .details-container .about .about-content button:focus, .container .details-container .about .about-content button:active {
+    outline: 0;
+    box-shadow: 1px 1px 10px 0px #22222280;
+  }
+  .container .skills-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .container .skills-container button {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    color: #222;
+    padding: 10px;
+    background: #fddb33;
+    cursor: pointer;
+    font-weight: bold;
+    width: 250px;
+    height: 40px;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 1px 1px 10px 0px #2222222b;
+    transition: 0.2s all;
+  }
+  .container .skills-container button:hover {
+    box-shadow: 1px 1px 1px 0px #2222222b;
+  }
+  .container .skills-container button:focus, .container .skills-container button:active {
+    outline: 0;
+    box-shadow: 1px 1px 10px 0px #22222280;
+  }
+  @media only screen and (max-width: 766px) {
+    .container {
+      height: auto;
+    }
+    .container .details-container {
+      flex-direction: column;
+    }
+    .container .details-container .avatar img {
+      width: 300px;
+    }
+    .container .details-container .about {
+      margin-top: 10px;
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideUpFromBottom {
+    0% {
+      transform: translateY(70%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #goback{
+    position: absolute;
+    cursor: pointer;
+    top:30px;
+    left:30px;
+    border-radius: 50%;
+
+  }
+  #goback:hover{
+    background-color: yellowgreen;
+
+  }

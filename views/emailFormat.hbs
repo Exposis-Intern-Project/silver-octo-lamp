@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  	{{!-- <title>Send mails</title> --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+    />
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+
+ 
+ <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" integrity="sha512-avbJ+2tqjGDsLhAbhnmNVjAfEI5Sa4+yrVSQD1K5sH8O5p7FwQlPsU+mxRVZ0zWPIk+FY9PyS23TCngfdb84Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	
+	<link rel="stylesheet" href="./file.css">
+	<link rel="stylesheet" href="./emailFormat.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css">
+    <title>Email | Blaster</title>
+   <link rel="shortcut icon" href="/email-send.png" type="image/x-icon">
+</head>
+<body>
+   <div id="load_animation" >
+  			<ion-icon name="earth-outline" class="animation"></ion-icon>
+    </div>
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0" id = "have_to_be_hide">
+    <div class="container">
+      <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Send</span><span style="color: #fff;">Blaster</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+        <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link active" href="#!">
+              <div>
+                 <i class="fas fa-home fa-lg mb-1"></i>
+              </div>
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/about">
+              <div>
+                <i class="fa-solid fa-info"></i>
+              </div>
+               About-Us
+            </a>
+          </li>
+          
+          <li class="nav-item text-center mx-2 mx-lg-1">
+            <a class="nav-link" href="/contact">
+              <div>
+                 <i class="fa-solid fa-message"></i>
+              </div>
+               Contact-Us
+            </a>
+          </li>
+          
+         
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+   </nav>
+
+  <section>
+    <!-- Intro -->
+    <div id="intro" class="bg-image " style=" 
+              background : url('Zz0zZTliMjQ4MzhlNGExMWViYmJiMjFiZTI2ZWNmN2MzZA==.jpg');
+          {{!-- background-color: rgb(192, 163, 163) ; --}}
+           
+        ">
+      <div  style="background-color: rgba(250, 182, 162, 0.15);"></div>
+      <nav aria-label="breadcrumb" style="margin-top: 100px; margin-left: 30px; margin-bottom: 30px">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Welcome Screen</a></li>
+              <li class="breadcrumb-item "><a href="/file">Upload-File</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                 <a href="#">Email-Attachments</a>
+              </li>
+            </ol>
+      </nav>
+
+  <div class="container form p-4">
+     <div class="text-email">
+         <h1 class="multicolortext" >Format Email Document</h1>
+     </div>
+    
+		<form  enctype="multipart/form-data">
+			<div class="form-outline" id="id2">
+				<!-- <i class="fas fa-exclamation-circle trailing" id="info"></i> -->
+				<input type="text" id="clientid" class="form-control form-icon-trailing" name = "clientId" />
+				<label class="form-label" for="form1">Client Id</label>
+				<div class="form-helper">&nbsp; To get Client Id <button type="button" class="btn1 "
+						data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+						Click Here
+					</button></div>
+			</div>
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">How to get Client Id, Client Secret & Refresh Token</h5>
+							<button type="button" class="btn-close" data-mdb-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p><b>Step 1: Create a new project</b><br>
+								The first thing we have to do is make a new project in the <a href="https://console.cloud.google.com/">Google Developer
+									Console</a>. Once in the console, press Select a project in the top left corner.
+								<br>
+								<img src="first.png"><br>
+								Once the window opens, press the + icon in the top right corner
+								to create a new project.
+								<br>
+								<img src="/second.png"><br>
+							</p>
+							<p>
+								<b>Step 2: Create API credentials</b><br>
+								Click Go to project settings at the bottom of the Project
+								Info section of the dashboard.<br>
+								<img src="./third.png"><br>
+								In your project settings, there is a sidebar on the left with a bunch of different
+								options.
+								Click the last one that says API Credentials.<br>
+								<img src="./fouth.png"><br>
+								Click the dropdown that says Create Credentials
+								and choose OAuth client ID from the list.Just press the Configure consent
+								screen button on the banner and it’ll let you name your “product”.<br><br>
+								Now under Application Type, choose Web Application and a small form will open up with
+								sections for
+								Name and Restrictions. You can give your client ID any name you like, but under
+								Restrictions
+								in the Authorized redirect URIs section add
+								<a href="https://developers.google.com/oauthplayground.">https://developers.google.com/oauthplayground.</a>
+								Now press Create!<br>
+								<img src="./fifth.png"><br>
+
+							</p>
+							<p>
+								<b>Step 3: Save your client id and client secret</b><br>
+								You should’ve been redirected to a page with a small “card” in the center with
+								your client ID and client secret.Note down these somewhere.
+
+							</p>
+							<p>
+								<b>Step 4: Configure OAuth</b><br>
+								Now go to <a
+	                            href="https://developers.google.com/oauthplayground">https://developers.google.com/oauthplayground</a>
+								and click the tools icon in the top
+								right. Check the box that says Use your own OAuth credentials and enter your client ID
+								and secret. Without closing out of the settings, enter https://mail.google.com/ into the
+								box in the Select and authorize APIs section and press Authorize APIs. You should get a
+								very scary-looking screen that looks like this:<br>
+								<img src="./sixth.png"><br>
+								Click the Advanced button on the left and then press Go to Your App’s Name (unsafe).
+								<img src="./seventh.png"><br>
+								Click Allow and you should get redirected back to the OAuth page. Now go to Step 2 of
+								the sidebar on the left and press Exchange authorization code for tokens.<br>
+								This should populate the two boxes below called Refresh token and Access token with a
+								couple of strings. Copy down the Refresh token as we’ll need it for later!
+								<img src="./eigth.png"><br>
+
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+							<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 2 column grid layout with text inputs for the first and last names -->
+			<div class="row mb-4">
+				<div class="col">
+					<div class="form-outline">
+						<input type="text" id="client_secret" name = "clientSecret" class="form-control" />
+						<label class="form-label" for="form6Example1">Client Secret</label>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-outline">
+						<input type="text" id="refrencetoken" name = "refreshToken" class="form-control" />
+						<label class="form-label" for="form6Example2">Refresh Token</label>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<!-- Email input -->
+			<div class="form-outline mb-4">
+				<input type="email" id="from_email" class="form-control" name = "from_email" />
+				<label class="form-label" for="form6Example5">From</label>
+			</div>
+
+			<div class="form-outline mb-4">
+				<textarea disabled id="to_email" name = "to_email" class="form-control"></textarea>
+				<label class="form-label" for="form6Example5">To</label>
+			</div>
+
+			
+			<div class="form-outline mb-4">
+				<input type="text" id="subject" name = "subject" class="form-control" />
+				<label class="form-label" for="form6Example3">Subject</label>
+			</div>
+
+			<!-- Message input -->
+			<div class="form-outline mb-4">
+				<textarea class="form-control" id="message" name = "message" rows="4"></textarea>
+				<label class="form-label" for="form6Example7">Message</label>
+			</div>
+			<!-- <div class="file-upload-wrapper">
+				<input type="file" id="input-file-now" class="file-upload-input" data-file-upload="file-upload">
+			  </div> -->
+
+			<!-- Checkbox -->
+			<label class="form-label" for="customFile">Add Attachments: </label>
+			<input type="file" class="form-control mb-4" id="file" />
+
+
+			<!-- Submit button -->
+			<button type="button" class="btn btn-secondary btn-rounded mb-4" onclick="Send_emails()">Send Mails</button>
+		</form>
+		
+	</div>
+	
+   </div>
+ 
+  </section>
+  
+  
+</body>
+
+<script>
+
+  window.onload = ()=>{
+	  let valid = localStorage.getItem("valid_emails");
+	  if(valid == null|| valid == "null" || valid == undefined){
+			alert("You cannnot bypass this");
+			window.location.href = "/file";
+	  }
+  }
+   
+    let dt = document.getElementById("to_email");
+    let valid_emails = JSON.parse(localStorage.getItem("valid_emails"));
+    console.log(valid_emails)
+    for(let index = 0 ; index < valid_emails.length ; index++){
+        dt.value  = dt.value+ "\n"+ valid_emails[index] + " ,";
+    }
+    
+    
+  const Send_emails = (e) =>{
+	 // e.preventDefault();
+	const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+
+    formData.append('clientId', document.getElementById("clientid").value);
+    formData.append('clientSecret', document.getElementById("client_secret").value);
+    formData.append('refresh_token', document.getElementById("refrencetoken").value);
+    formData.append('from_email', document.getElementById("from_email").value);
+    formData.append('subject', document.getElementById("subject").value);
+    formData.append('to_email', JSON.stringify(localStorage.getItem("valid_emails")));
+    formData.append('message', document.getElementById("message").value);
+    formData.append('file', fileField.files[0]);
+    console.log(formData)
+	 document.getElementById("load_animation").style.display = "block";
+	 document.getElementById("have_to_be_hide").style.display = "none";
+
+    fetch('/sendEmails', {
+ method: 'POST',
+  body: formData
+})
+.then(response => response.json())
+.then(result => {
+  console.log('Success:', result);
+  alert(result.message);
+  if(result.status == 200){
+	  localStorage.clear();
+  window.location.href = "/sucessful";
+  }else{
+	  localStorage.clear();
+  	window.location.href = "/errorOccuured";  
+  }
+})
+.catch(error => {
+   console.error('Error:', error);
+	alert("An ERROR occured " + error);
+	window.location.href = "/errorOccuured";
+});
+  }
+   
+  
+</script>
+<!-- <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+></script> -->
+
+<!-- MDB -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"
+></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>
+
