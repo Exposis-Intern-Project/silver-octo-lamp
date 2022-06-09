@@ -8,9 +8,9 @@ const OAuth2 = google.auth.OAuth2;
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const multer = require('multer');
-const helpers = require('./JS/helpers.js');
+const helpers = require('./Js/helpers.js');
 const handlebars = require('handlebars');
-const { receiveMessageOnPort } = require('worker_threads');
+// const { receiveMessageOnPort } = require('worker_threads');
 
 // for storing file
 const storage = multer.diskStorage({
