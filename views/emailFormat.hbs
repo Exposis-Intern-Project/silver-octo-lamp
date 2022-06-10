@@ -119,7 +119,9 @@
 				<div class="form-helper">&nbsp; To get Client Id <button type="button" class="btn1 "
 						data-mdb-toggle="modal" data-mdb-target="#exampleModal">
 						Click Here
-					</button></div>
+					</button>
+					
+				</div>
 			</div>
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
 				aria-hidden="true">
@@ -261,10 +263,13 @@
 <script>
 
   window.onload = ()=>{
-	  let valid = localStorage.getItem("valid_emails");
+	  let valid = JSON.parse(localStorage.getItem("valid_emails"));
 	  if(valid == null|| valid == "null" || valid == undefined){
 			alert("You cannnot bypass this");
 			window.location.href = "/file";
+	  }
+	  if(valid.length != 0){
+		  alert('You need to add ' +  (parseInt(valid.length / 500)  + 1) + ' Client Id & ' + (parseInt(valid.length / 500)  + 1)  + ' access refresh token & ' + (parseInt(valid.length / 500)  + 1)  + ' Client Secret' + `& add all these in Array of String like [ "first client id" , "second client id"] in respected sections. `);
 	  }
   }
    
@@ -277,17 +282,20 @@
     
     
   const Send_emails = (e) =>{
+   
+    checkDataFunction();
+
 	 // e.preventDefault();
 	const formData = new FormData();
     const fileField = document.querySelector('input[type="file"]');
 
-    formData.append('clientId', document.getElementById("clientid").value);
-    formData.append('clientSecret', document.getElementById("client_secret").value);
-    formData.append('refresh_token', document.getElementById("refrencetoken").value);
-    formData.append('from_email', document.getElementById("from_email").value);
-    formData.append('subject', document.getElementById("subject").value);
+    formData.append('clientId', document.getElementById("clientid").value.trim());
+    formData.append('clientSecret', document.getElementById("client_secret").value.trim());
+    formData.append('refresh_token', document.getElementById("refrencetoken").value.trim());
+    formData.append('from_email', document.getElementById("from_email").value.trim());
+    formData.append('subject', document.getElementById("subject").value.trim());
     formData.append('to_email', JSON.stringify(localStorage.getItem("valid_emails")));
-    formData.append('message', document.getElementById("message").value);
+    formData.append('message', document.getElementById("message").value.trim());
     formData.append('file', fileField.files[0]);
     console.log(formData)
 	 document.getElementById("load_animation").style.display = "block";
@@ -316,7 +324,21 @@
 });
   }
    
-  
+  const checkDataFunction = () => {
+	
+	  
+      let length_of_client =   document.getElementById("clientid").value.trim().split(",").length;
+
+	  let length_of_secret =   document.getElementById("clientid").value.trim().split(",").length;
+
+	  let length_of_refresh =   document.getElementById("clientid").value.trim().split(",").length;
+
+     if(length_of_client != (parseInt(valid.length / 500)  + 1)  && length_of_secret != (parseInt(valid.length / 500)  + 1)  && length_of_refresh != (parseInt(valid.length / 500)  + 1) ){
+		 alert("Invalid length of Client ID or Client Secret or Refresh token");
+		 window.location.reload();
+	 }
+
+  }
 </script>
 <!-- <script
   type="text/javascript"

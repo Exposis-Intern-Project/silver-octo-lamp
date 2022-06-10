@@ -86,33 +86,35 @@ app.post("/sendEmails" ,upload.single('file'), (req,res)=>{
   // to_email.push("nitingupta.tt.19@nitj.ac.in");
   // console.log(to_email);
    
+  let length_of_client_id = clientId.split(",").length;
+  clientId = clientId.split(",");
+  clientSecret = clientId.split(",");
+  refresh_token = refresh_token.split(",");
+  let start = 0 ;
 
+  for(let count = 0; count < length_of_client_id ; count++){
+    
   const oauth2Client = new OAuth2(
-     clientId, 
-     clientSecret,
+     clientId[count], 
+     clientSecret[count],
     "https://developers.google.com/oauthplayground" // Redirect URL
    );
     
    oauth2Client.setCredentials({
-    refresh_token: refresh_token
+    refresh_token: refresh_token[count]
     });
    
 
-  //  oauth2Client.refreshAccessToken(function(err, tokens){
-  //   console.log(tokens)
-  //   oauth2Client.credentials = {access_token : tokens.access_token}
-  //   callback(oauth2Client);
-  //  });
-     
+  
     const accessToken = oauth2Client.getAccessToken()
   const smtpTransport = nodemailer.createTransport({
   service: "gmail",
   auth: {
        type: "OAuth2",
        user: from_email, 
-       clientId: clientId,
-       clientSecret: clientSecret,
-       refreshToken: refresh_token,
+       clientId: clientId[count],
+       clientSecret: clientSecret[count],
+       refreshToken: refresh_token[count],
        accessToken: accessToken
   },
   tls: {
@@ -132,13 +134,14 @@ app.post("/sendEmails" ,upload.single('file'), (req,res)=>{
 
    const mailOptions = {
     from: from_email, // Sender address
-    to: to_email, // List of recipients
+    to: to_email.slice(start , start + 501), // List of recipients
     subject: subject, // Subject line
     html: htmlToSend, // Plain text body
     attachments: [
       { filename: req.file.filename, path: req.file.path }
    ]
 };
+start = start + 500 ;
 smtpTransport.sendMail(mailOptions, (error, response) => {
   
   if(error){
@@ -150,14 +153,26 @@ smtpTransport.sendMail(mailOptions, (error, response) => {
   }
   else{
     console.log(response);
-    res.status(200).json({
-      message: "All Mails Are Transferred!",
-      status: 200
-    })
+   
   }
   smtpTransport.close();
 });
 // res.send("rror")
+
+res.status(200).json({
+  message: "All Mails Are Transferred!",
+  status: 200
+})
+
+
+
+
+
+
+
+}
+
+
 
 })
 
