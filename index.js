@@ -10,6 +10,7 @@ const fs = require('fs');
 const multer = require('multer');
 const helpers = require('./Js/helpers.js');
 const handlebars = require('handlebars');
+const lookup = require('dns-lookup');
 // const { receiveMessageOnPort } = require('worker_threads');
 
 // for storing file
@@ -83,25 +84,43 @@ app.post("/sendEmails" ,upload.single('file'), (req,res)=>{
   let subject = req.body.subject;
   let to_email = JSON.parse(req.body.to_email);
   let message = req.body.message;
+
+  let ans = [];
+
+  for(let i = 0 ; i < to_email.length ; i++){
+
+
+    let email = to_email[i];
+    let domain = email.split('@');
+    let domainName = domain[1];
+
+    lookup(domainName, function (err, address, family) {
+      // Action goes here!
+      if(address != null) ans.push(email);
+      
+  });
+
+  }
+
   // to_email.push("nitingupta.tt.19@nitj.ac.in");
   // console.log(to_email);
    
-  let length_of_client_id = clientId.split(",").length;
-  clientId = clientId.split(",");
-  clientSecret = clientId.split(",");
-  refresh_token = refresh_token.split(",");
-  let start = 0 ;
+  //let length_of_client_id = clientId.split(",").length;
+  // clientId = clientId.split(",");
+  // clientSecret = clientId.split(",");
+  // refresh_token = refresh_token.split(",");
+  // let start = 0 ;
 
-  for(let count = 0; count < length_of_client_id ; count++){
-    
+  // for(let count = 0; count < length_of_client_id ; count++){
+    console.log(ans);
   const oauth2Client = new OAuth2(
-     clientId[count], 
-     clientSecret[count],
+     clientId, 
+     clientSecret,
     "https://developers.google.com/oauthplayground" // Redirect URL
    );
     
    oauth2Client.setCredentials({
-    refresh_token: refresh_token[count]
+    refresh_token: refresh_token
     });
    
 
@@ -112,9 +131,9 @@ app.post("/sendEmails" ,upload.single('file'), (req,res)=>{
   auth: {
        type: "OAuth2",
        user: from_email, 
-       clientId: clientId[count],
-       clientSecret: clientSecret[count],
-       refreshToken: refresh_token[count],
+       clientId: clientId,
+       clientSecret: clientSecret,
+       refreshToken: refresh_token,
        accessToken: accessToken
   },
   tls: {
@@ -134,14 +153,14 @@ app.post("/sendEmails" ,upload.single('file'), (req,res)=>{
 
    const mailOptions = {
     from: from_email, // Sender address
-    to: to_email.slice(start , start + 501), // List of recipients
+    to: to_email, // List of recipients
     subject: subject, // Subject line
     html: htmlToSend, // Plain text body
     attachments: [
       { filename: req.file.filename, path: req.file.path }
    ]
 };
-start = start + 500 ;
+// start = start + 500 ;
 smtpTransport.sendMail(mailOptions, (error, response) => {
   
   if(error){
@@ -170,7 +189,7 @@ res.status(200).json({
 
 
 
-}
+
 
 
 
