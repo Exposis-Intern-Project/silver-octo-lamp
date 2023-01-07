@@ -10,6 +10,7 @@ const fs = require('fs');
 const multer = require('multer');
 const helpers = require('./Js/helpers.js');
 const handlebars = require('handlebars');
+const dnsLookup = require("dns-lookup");
 // const { receiveMessageOnPort } = require('worker_threads');
 
 // for storing file
