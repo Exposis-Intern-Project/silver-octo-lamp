@@ -285,7 +285,7 @@
     
   const Send_emails = (e) =>{
    
-    checkDataFunction();
+    //checkDataFunction();
 
 	 // e.preventDefault();
 	const formData = new FormData();
@@ -326,21 +326,7 @@
 });
   }
    
-  const checkDataFunction = () => {
-	
-	  
-      let length_of_client =   document.getElementById("clientid").value.trim().split(",").length;
 
-	  let length_of_secret =   document.getElementById("clientid").value.trim().split(",").length;
-
-	  let length_of_refresh =   document.getElementById("clientid").value.trim().split(",").length;
-
-     if(length_of_client != (parseInt(valid.length / 500)  + 1)  && length_of_secret != (parseInt(valid.length / 500)  + 1)  && length_of_refresh != (parseInt(valid.length / 500)  + 1) ){
-		 alert("Invalid length of Client ID or Client Secret or Refresh token");
-		 window.location.reload();
-	 }
-
-  }
 </script>
 <!-- <script
   type="text/javascript"
